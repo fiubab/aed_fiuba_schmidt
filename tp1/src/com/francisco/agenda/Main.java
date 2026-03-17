@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 
-		Agenda agenda = new Agenda();
+		Diary diary = new Diary();
 
 		Scanner sc = new Scanner(System.in);
 		while (option != 4) {
@@ -42,10 +42,10 @@ public class Main {
 		}
 	}
 
-	static void agregarContacto() {
+	static void addContact() {
 
 	}
-	static void listarContactos() {}
-	static void buscarContacto() {}
+	static void listContacts() {}
+	static void findContact() {}
 
 }
