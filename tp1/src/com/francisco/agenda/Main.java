@@ -3,11 +3,10 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) {
-
+	static void main(String[] args) {
 		Diary diary = new Diary();
-
 		Scanner sc = new Scanner(System.in);
+		int option = 0;
 		while (option != 4) {
 			System.out.print("""
 					AGENDA DE CONTACTOS
@@ -15,19 +14,19 @@ public class Main {
 					2 - Listar contactos
 					3 - Buscar contacto
 					4 - Salir
-					Seleccione una opción: """);
+					Seleccione una opción:\t""");
 
 			try {
-				int option = sc.nextInt();
+				option = sc.nextInt();
 				switch (option) {
 					case 1:
-						agregarContacto();
+						addContact(diary, sc);
 						break;
 					case 2:
-						listarContactos();
+						listContacts();
 						break;
 					case 3:
-						buscarContacto();
+						findContact();
 						break;
 					case 4:
 						System.out.println("Exiting...");
@@ -42,8 +41,16 @@ public class Main {
 		}
 	}
 
-	static void addContact() {
-
+	static void addContact(Diary diary, Scanner sc) {
+		System.out.println("Inserte datos de contacto");
+		System.out.print("Nombre: ");
+		String name = sc.nextLine();
+		System.out.print("Telefono: ");
+		int phone = sc.nextInt();
+		System.out.print("Email: ");
+		String email = sc.nextLine();
+		Contact c = new Contact(name, phone, email);
+		diary.addContact(c);
 	}
 	static void listContacts() {}
 	static void findContact() {}

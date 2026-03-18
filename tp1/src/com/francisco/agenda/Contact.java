@@ -1,11 +1,11 @@
 package com.francisco.agenda;
 
 public class Contact {
-	String name;
-	int phone;
-	String email;
+	public String name;
+	public int phone;
+	public String email;
 
-	public void Main(	String name, int phone, String email) {
+	public Contact(	String name, int phone, String email) {
 		this.name = name;
 		this.phone = phone;
 		this.email = email;
