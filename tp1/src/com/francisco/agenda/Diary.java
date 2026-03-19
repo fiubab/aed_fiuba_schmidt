@@ -15,12 +15,16 @@ public class Diary {
 	public void listContacts() {
 		int i = 1;
 		for (Contact contact : this.contacts) {
-			System.out.printf("Contacto n%d \n", i);
-			System.out.printf("Nombre: %s \n", contact.name);
-			System.out.printf("Telefono: %s \n", contact.phone);
-			System.out.printf("Email: %s \n", contact.email);
+			System.out.printf("Contacto %d \n", i);
+			System.out.printf("\tNombre: %s \n", contact.name);
+			System.out.printf("\tTelefono: %s \n", contact.phone);
+			System.out.printf("\tEmail: %s \n", contact.email);
+			if (i != contacts.size()) {
+				System.out.println("     ---     ");
+			}
 			i++;
 		}
+		return;
 	}
 
 	public Contact findContact(String name) {
