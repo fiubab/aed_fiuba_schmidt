@@ -15,7 +15,8 @@ public class Main {
 					1 - Agregar contacto
 					2 - Listar contactos
 					3 - Buscar contacto
-					4 - Salir
+					4 - Guardar contactos en archivo
+					0 - Salir
 					Seleccione una opción:\t""");
 			try {
 				// por problemas con el buffer de Scanner usamos siempre nextLine y parseamos a int
@@ -32,6 +33,9 @@ public class Main {
 						findContact(diary, sc);
 						break;
 					case 4:
+						contactsFile(diary, sc);
+						break;
+					case 0:
 						System.out.println("Exiting...");
 						exec = false;
 						break;
@@ -97,4 +101,27 @@ public class Main {
 		System.out.println("Email: " + c.email);
 		return;
 	}
+
+	static void saveContacts(Diary diary) {
+		if (diary.hasFile()) {
+			for (Contact contact : diary.contacts()) {
+				diary.writeContact(contact);
+			}
+		}
+		return;
+	}
+
+	static void contactsFile(Diary diary, Scanner sc) {
+		if (!diary.hasFile()) {
+			System.out.print("Ingrese nombre del archivo: ");
+			String fileName = sc.nextLine();
+			diary.createFile(fileName);
+		}
+		if (diary.contacts().isEmpty()) {
+			return;
+		}
+		saveContacts(diary);
+		System.out.println("Contactos guardados");
+		return;
+		}
 }
