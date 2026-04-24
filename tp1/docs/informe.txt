@@ -1,0 +1,58 @@
+Informe del trabajo:
+    Para este trabajo:
+        - Logré instalar y configurar el IDE intellij con la licencia de estudiantes.
+        - Creé y ejecuté código en el lenguaje Java +11.
+        - Desarrollé un pequeño programa de consola para simular una agenda.
+        - Modularice las clases usadas en el código respetando los principios de POO.
+        - Implementé 4 clases: Main, Agenda, Contacto y FileHandler.
+        - Utilicé ArrayList para guardar los contactos en memoria.
+        - Implementé persistencia de datos en archivos de texto.
+        - Agregué manejo de errores con try-catch para que el programa no explote ante entradas inválidas.
+        - Respeté las convenciones de nombres del Apéndice A del enunciado.
+
+    Manual del usuario:
+        Este programa es una agenda de contactos por consola. Al ejecutarlo se muestra un menú
+        con las siguientes opciones:
+        1 - Agregar contacto: Permite crear un nuevo contacto ingresando nombre, teléfono y email.
+        2 - Listar contactos: Muestra todos los contactos guardados en la agenda.
+        3 - Buscar contacto: Busca un contacto por su nombre y lo muestra en pantalla.
+        4 - Guardar contactos en archivo: Crea un archivo donde se guardan todos los contactos.
+        0 - Salir: Cierra el programa.
+        El teléfono debe ser un número entero, el resto de los campos son texto.
+        Si la agenda está llena (10 contactos) no permite agregar más.
+        Si la agenda está vacía no se puede listar ni buscar.
+
+    Manual del programador:
+        El código está dividido en 4 clases en el paquete com.francisco.agenda:
+        - Main.java: Contiene el menú principal, maneja la interacción con el usuario por consola
+          y controla el flujo del programa.
+        - Agenda.java: Representa la agenda en sí. Contiene una lista de contactos en memoria
+          y un FileHandler para escribir en archivos. Provee métodos para agregar, listar y buscar
+          contactos.
+        - Contacto.java: Modelo simple con los atributos nombré, teléfono, email y un flag saved
+          para evitar escribir contactos duplicados en el archivo.
+        - FileHandler.java: Se encarga de crear el archivo y escribir líneas en formato CSV
+          (nombre, teléfono, email).
+        Se usan rutas relativas (./resources/) para los archivos de datos.
+        Para compilar desde la raíz del proyecto:
+            javac -d out -sourcepath src src/com/francisco/agenda/*.java
+        Para ejecutar:
+            java -cp out com.francisco.agenda.Main
+
+    Cuestionario:
+        1) ¿Qué es un Debug?
+            Es el proceso de encontrar y corregir errores (bugs) en el código. Permite ejecutar
+            el programa paso a paso para entender qué está pasando en cada momento.
+            Permite también detener el programa en un punto determinado para poder evaluar variables y
+            demás estructuras.
+
+        2) ¿Qué es un "Breakpoint"?
+            Es un punto de interrupción que se coloca en una línea de código. Cuando el programa
+            llega a ese punto durante la ejecución en modo debug, se pausa y permite inspeccionar
+            el estado del programa.
+
+        3) ¿Qué es "Step Into", "Step Over" y "Step Out"?
+            - Step Into: Entra dentro de un método para ejecutarlo línea por línea.
+            - Step Over: Ejecuta la siguiente línea sin entrar en los métodos llamados en esa línea.
+            - Step Out: Sale del método actual y vuelve al que lo llamó.
+

@@ -2,9 +2,10 @@ package com.francisco.agenda;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+// clase Main es la que tiene el metodo que ejecutaremos para correr nuestra app de consola
 public class Main {
 	static void main(String[] args) {
-		Diary diary = new Diary();
+		Agenda diary = new Agenda();
 		Scanner sc = new Scanner(System.in);
 
 		boolean exec = true;
@@ -18,10 +19,12 @@ public class Main {
 					4 - Guardar contactos en archivo
 					0 - Salir
 					Seleccione una opción:\t""");
+			// usare try catch en toda la codebase para atajar los errores y que la app no explote
 			try {
 				// por problemas con el buffer de Scanner usamos siempre nextLine y parseamos a int
 				// porque al usar nextInt queda algo en el buffer y se saltea el nextLine siguiente
 				int option = Integer.parseInt(sc.nextLine());
+				//
 				switch (option) {
 					case 1:
 						addContact(diary, sc);
@@ -34,6 +37,7 @@ public class Main {
 						break;
 					case 4:
 						contactsFile(diary, sc);
+						saveContacts(diary);
 						break;
 					case 0:
 						System.out.println("Exiting...");
@@ -42,6 +46,7 @@ public class Main {
 					default:
 						System.out.println("Por favor seleccione una opcion valida");
 				}
+				System.out.println();
 			} catch (NumberFormatException e) {
 					System.out.println("Opcion ingresada no valida");
 			}
@@ -49,7 +54,7 @@ public class Main {
 		sc.close();
 	}
 
-	static void addContact(Diary diary, Scanner sc) {
+	static void addContact(Agenda diary, Scanner sc) {
 		System.out.println("Inserte datos de contacto");
 
 		try {
@@ -62,16 +67,15 @@ public class Main {
 			System.out.print("Email: ");
 			String email = sc.nextLine();
 
-			Contact c = new Contact(name, phone, email);
+			Contacto c = new Contacto(name, phone, email);
 			diary.addContact(c);
-			return;
 		} catch (InputMismatchException | NumberFormatException e) {
 			System.out.println("Opcion ingresada no valida");
 			addContact(diary, sc);
 		}
 	}
 
-	static void listContacts(Diary diary) {
+	static void listContacts(Agenda diary) {
 		if (diary.contacts.isEmpty()) {
 			System.out.println("Agenda vacia");
 			return;
@@ -81,17 +85,16 @@ public class Main {
 			return;
 		}
 		diary.listContacts();
-		return;
 		}
 
-	static void findContact(Diary diary, Scanner sc) {
+	static void findContact(Agenda diary, Scanner sc) {
 		if (diary.contacts.isEmpty()) {
 			System.out.println("Agenda vacia");
 			return;
 		}
 		System.out.print("Nombre de contacto: ");
 		String name = sc.nextLine();
-		Contact c = diary.findContact(name);
+		Contacto c = diary.findContact(name);
 		if (c == null) {
 			System.out.println("No encontrado");
 			return;
@@ -99,29 +102,32 @@ public class Main {
 		System.out.println("Nombre: " + c.name);
 		System.out.println("Telefono: " + c.phone);
 		System.out.println("Email: " + c.email);
-		return;
 	}
 
-	static void saveContacts(Diary diary) {
+	static void saveContacts(Agenda diary) {
+		if (diary.contacts().isEmpty()) {
+			System.out.println("Agenda vacia");
+			return;
+		}
+
+		// guardamos los contactos solo si se creo el archivo
 		if (diary.hasFile()) {
-			for (Contact contact : diary.contacts()) {
-				diary.writeContact(contact);
+			for (Contacto contact : diary.contacts()) {
+				if (!contact.saved) {
+					diary.writeContact(contact);
+				}
 			}
 		}
-		return;
+		System.out.println("Contactos guardados");
 	}
 
-	static void contactsFile(Diary diary, Scanner sc) {
+	static void contactsFile(Agenda diary, Scanner sc) {
 		if (!diary.hasFile()) {
 			System.out.print("Ingrese nombre del archivo: ");
 			String fileName = sc.nextLine();
 			diary.createFile(fileName);
+		} else {
+			System.out.println("Archivo ya creado");
 		}
-		if (diary.contacts().isEmpty()) {
-			return;
-		}
-		saveContacts(diary);
-		System.out.println("Contactos guardados");
-		return;
-		}
+	}
 }

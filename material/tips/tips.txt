@@ -1,0 +1,35 @@
+TDA:
+
+1) Diseño elegante
+2) Conjunto completo de operaciones: 
+		lo puedo detectar haciendo el main de un caso de uso
+		lo puedo detectar haciendo el test de un caso de uso
+		ver el tda desde el punto de vista del usuario
+		imprimir el contenido
+3) Robustez: validar los parametros
+4) Encapsular: no dejar romper mi TDA	
+5) Pre y post	
+6) no implementar los metodos de un TDA pequeño en el TDA que lo contiene
+7) equals y toString
+8) nunca hardcoding 
+9) Si hay un vector, pasar el tamaño maximo por parametro en el constructor
+10) No usar tipos de datos sin valor inicial null cuando hace falta un valor inicial. NO USAR -1 o MAX_INT.
+11) Chequear si hace falta hacer el diagrama de estados
+12) No utilizar el tipo de dato en los nombres de los objetos o clases
+13) El null es ideal para calcular maximos y minimos
+14) Para saber si tengo el conjunto completo de metodos, imprimir toda la informacion importante del TDA desde el main.
+15) NO SE PUEDE USAR LISTAS, ni pilas ni colas
+16) los valores calculables, hacerlos con metodos y no con atributos. 
+17) no reemplazar el TDA por los atributos al momento de recibir por parametro
+18) no utilizar system out en el TDA (salvo que sea el TDA manejo de pantalla)
+
+
+
+Listas:
+1) Resolver el problema
+2) Respetar todo lo de TDA
+3) Modularizar: la mayoria de los metodos tienen 1 sola accion. A lo sumo 1 solo ciclo
+4) Elegancia
+5) Separar los metodos funcionales complejos en las clases funcionales
+6) manejo de errores
+7) demostrar uso de listas, pilas y colas

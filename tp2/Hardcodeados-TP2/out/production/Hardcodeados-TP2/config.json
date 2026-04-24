@@ -1,0 +1,18 @@
+{
+  "moverArriba": "W",
+  "moverIzquierda": "A",
+  "moverAbajo": "S",
+  "moverDerecha": "D",
+  "moverArribaIzquierda": "Q",
+  "moverArribaDerecha": "E",
+  "moverAbajoIzquierda": "Z",
+  "moverAbajoDerecha": "C",
+  "imagenFondo": "src/rolgar2/Imagenes/fondo.bmp",
+  "imagenPiedra": "src/rolgar2/Imagenes/piedra.bmp",
+  "imagenRampaSubida": "src/rolgar2/Imagenes/escalera_subida.bmp",
+  "imagenRampaBajada": "src/rolgar2/Imagenes/escalera_bajada.bmp",
+  "imagenAgua": "src/rolgar2/Imagenes/agua.bmp",
+  "imagenCarta": "src/rolgar2/Imagenes/carta.bmp",
+  "imagenJugador": "src/rolgar2/Imagenes/jugador.bmp",
+  "imagenEnemigo": "src/rolgar2/Imagenes/enemigo.bmp"
+}

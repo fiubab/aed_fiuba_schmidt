@@ -1,46 +1,36 @@
 package com.francisco.agenda;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.File;
-import java.util.List;
 
 import java.io.IOException;
 
+// clase para manejar la creacion y escritura del archivo
 public class FileHandler {
 	public String fileName;
 
+	// constructor de la clase
 	public FileHandler(String fileName) {
-		File file = new File(fileName);
+		File file = new File("./resources/" + fileName);
 		try {
 			boolean created = file.createNewFile();
-			this.fileName = fileName;
+			if (created) {
+				System.out.println("Archivo creado correctamente, path: ./resources/" + file.getName());
+			}
+			this.fileName = "./resources/" + fileName;
 		} catch (Exception e) {
 			System.out.println("Error" + e.getMessage());
 		}
 	}
 
+	// metodo para escribir una linea
 	public void writeLine(String text) {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(this.fileName, true))) {
 			writer.write(text);
 			writer.newLine();
-			writer.close();
 		} catch (IOException e) {
 			System.out.println("Error" + e.getMessage());
-		}
-	}
-
-	public List<String> read(int nContacts) {
-		if (nContacts == 0) nContacts = 10;
-		try (BufferedReader reader = new BufferedReader(new FileReader(this.fileName))) {
-			List<String> contactsList = reader.readAllLines();
-			reader.close();
-			return contactsList;
-		} catch (IOException e) {
-			System.out.println("Error" + e.getMessage());
-			return null;
 		}
 	}
 }

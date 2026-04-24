@@ -1,0 +1,7 @@
+Datos personales del alumno:
+
+    - Padron: 114777
+
+    - Nombre y apellido: Francisco Ballerio
+
+    - Correo: fballerio@fi.uba.ar
