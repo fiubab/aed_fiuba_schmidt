@@ -1,8 +1,7 @@
 package com.fballerio.tda.ej1;
 import com.fballerio.util.Validation;
 
-
-public class Libro {
+public class Libro implements Prestable{
 //INTERFACES ----------------------------------------------------------------------------------------------
 //ENUMERADOS ----------------------------------------------------------------------------------------------
 //CONSTANTES ----------------------------------------------------------------------------------------------
@@ -12,6 +11,7 @@ public class Libro {
 	private String autor;
 	private int ano_publicacion;
 	private int copias_disponibles;
+	private int copias_prestadas;
 //ATRIBUTOS TRANSITORIOS ----------------------------------------------------------------------------------
 	//CONSTRUCTORES -----------------------------------------------------------------------------------------
 	public Libro(String titulo, String autor, int ano_publicacion, int copias) {
@@ -19,11 +19,28 @@ public class Libro {
 		setAutor(autor);
 		setPublicacion(ano_publicacion);
 		setCopiasDisponibles(copias);
+		this.copias_prestadas = 0;
 	}
 //METODOS ABSTRACTOS --------------------------------------------------------------------------------------
 //METODOS HEREDADOS (CLASE)--------------------------------------------------------------------------------
 //METODOS HEREDADOS (INTERFACE)----------------------------------------------------------------------------
-//METODOS DE CLASE ----------------------------------------------------------------------------------------
+
+	@Override
+	public void devolver() {
+		if (this.copias_prestadas > 0) { this.copias_prestadas--; }
+	}
+
+	@Override
+	public boolean estaDisponible() {
+		return this.copias_prestadas < getCopiasDisponibles();
+	}
+
+	@Override
+	public void prestar() {
+		if (this.copias_prestadas < getCopiasDisponibles()) { this.copias_prestadas++; }
+	}
+
+	//METODOS DE CLASE ----------------------------------------------------------------------------------------
 //METODOS GENERALES ---------------------------------------------------------------------------------------
 	@Override
 	public boolean equals(Object obj) {
@@ -31,14 +48,13 @@ public class Libro {
 		if (obj == null || getClass() != obj.getClass()) return false;
 
 		Libro other = (Libro) obj;
-		return this.titulo.equalsIgnoreCase(other.titulo) && this.autor.equals(other.autor) && this.ano_publicacion == other.ano_publicacion;
+		return this.titulo.equalsIgnoreCase(other.titulo) && this.autor.equalsIgnoreCase(other.autor) && this.ano_publicacion == other.ano_publicacion;
 	}
 
 	@Override
 	public String toString() {
 		return "Titulo:" + this.titulo + "\nAutor" + this.autor + "\nPublicado:" + this.ano_publicacion + "\n";
 	}
-
 //METODOS DE COMPORTAMIENTO -------------------------------------------------------------------------------
 //METODOS DE CONSULTA DE ESTADO ---------------------------------------------------------------------------
 //GETTERS REDEFINIDOS -------------------------------------------------------------------------------------
@@ -60,14 +76,13 @@ public class Libro {
 	public int getCopiasDisponibles() {
 		return copias_disponibles;
 	}
-
 //SETTERS COMPLEJOS----------------------------------------------------------------------------------------
 	//SETTERS SIMPLES ---------------------------------------------------------------------------------------
 	/**
 	 Asigna el titulo al objeto libro
 	 @param titulo String
 	 */
-	public void setTitulo(String titulo) {
+	private void setTitulo(String titulo) {
 		Validation.validString(titulo);
 		this.titulo = titulo;
 	}
@@ -91,7 +106,7 @@ public class Libro {
 	}
 
 	/**
-	 Asigna la cantidad de copias disponibles al objeto libro
+	 Asigna la cantidad de copias disponibles al objeto libro. Mayores a cero
 	 @param copias int
 	 */
 	public void setCopiasDisponibles(int copias) {

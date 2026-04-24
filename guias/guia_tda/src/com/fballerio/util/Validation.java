@@ -10,27 +10,27 @@ public class Validation {
 	 */
 	public static void validString(String texto) {
 		if (texto == null || texto.isBlank()) {
-			throw new RuntimeException("texto" + texto + "invalido");
+			throw new IllegalArgumentException("texto" + texto + "invalido");
 		}
 	}
 
 	/**
 	 * Valida el año
-	 * @param año int
+	 * @param year int
 	 */
 	public static void validYear(int year) {
-		if (1600 > year || year > 2026) {
-			throw new RuntimeException("Año" + year + "invalido");
+		if (1950 > year || year > 2026) {
+			throw new IllegalArgumentException("Año" + year + "invalido");
 		}
 	}
 
 	/**
 	 * Valida cantidad de copias
-	 * @param copias int
+	 * @param copies int
 	 */
 	public static void validCopies(int copies) {
 		if (copies <= 0 || copies > 100) {
-			throw new RuntimeException("Cantidad de copias invalida");
+			throw new IllegalArgumentException("Cantidad de copias invalida");
 		}
 	}
 }
