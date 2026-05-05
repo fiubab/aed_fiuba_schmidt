@@ -1,0 +1,52 @@
+class User {
+	attributes:
+		private int dni
+		private String name
+		private BankAccount[] accounts
+	
+	getters and setters:
+		private setDni(int dni)
+		public setName(String nombre)
+		public getDni()
+		public getName()
+		public getAccounts()
+	methods:
+		addAccount(BankAccount acc)
+}
+
+class BankAccount {
+	attributes:
+		uuid id
+		User owner
+		int balance
+		Transaction[] history
+	
+	getters && setters:
+		private setId()
+		public getId()
+		private setOwner()
+		public getOwner()
+		private setBalance()
+		public getBalance()
+		public getHistory()
+		
+	methods:
+		addTransaction()
+		updateBalance()
+}
+
+class Transaction {
+	attributes:
+		String tipo (creo que deberia ser un enum, pero no se como funcionan)
+		tipo: [deposito, transferencia, retiro, debito, interes_generado]
+		int amount
+		Date date
+	
+	getters and setters:
+		private setTipo()
+		public getTipo()
+		private setAmount()
+		public getAmount()
+		private setDate()
+		public getDate()
+}
