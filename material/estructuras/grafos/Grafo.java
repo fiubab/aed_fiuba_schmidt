@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 
 /**
  * TDA Grafo (Dirigido y Ponderado)
- * Implementado con una "lista de vértices" (un Map para eficiencia)
+ * Implementado con una "lista de vértices" (un Map para eficiencia).
  * donde cada vértice tiene su "sublista de aristas".
  *
  * @param <T> El tipo del valor almacenado en los vértices (ej. String, Integer)

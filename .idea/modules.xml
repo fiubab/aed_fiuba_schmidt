@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/aed.iml" filepath="$PROJECT_DIR$/aed.iml" />
+      <module fileurl="file://$PROJECT_DIR$/estructuras/estructuras.iml" filepath="$PROJECT_DIR$/estructuras/estructuras.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guias/guia_java/guia_java.iml" filepath="$PROJECT_DIR$/guias/guia_java/guia_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guias/guia_tda/guia_tda.iml" filepath="$PROJECT_DIR$/guias/guia_tda/guia_tda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guias/guias.iml" filepath="$PROJECT_DIR$/guias/guias.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tp1/tp1.iml" filepath="$PROJECT_DIR$/tp1/tp1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tp2/tp2.iml" filepath="$PROJECT_DIR$/tp2/tp2.iml" />
+    </modules>
+  </component>
+</project>
