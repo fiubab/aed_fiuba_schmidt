@@ -72,7 +72,7 @@ def merge_sort(lista):
 Ahora bien, todo muy lindo. Pero como se que complejidad tiene realmente el algoritmo usando la notacion big O?
 
 # De eq a big O
-##### Teorema maestro
+#### > Teorema maestro
 El metodo mas rapido y directo en los problemas "divide and conquer" con ecuaciones de este estilo: $$T(n) = aT(n/b) + O(n^d)$$
 1. Identifica las variables:
     - $a$: Número de subproblemas (llamadas recursivas).
@@ -84,7 +84,15 @@ El metodo mas rapido y directo en los problemas "divide and conquer" con ecuacio
     - **Caso 2 (**$c = d$**):** El trabajo está equilibrado por nivel. **Complejidad:** $O(n^d \log n)$
     - **Caso 3 (**$c < d$**):** El trabajo local en la raíz domina. **Complejidad:** $O(n^d)$
 
-##### Expansion / Sustitucion
+###### Teorema Maestro por Sustracción
+$$T(n) = aT(n-b) + O(n^k)$$
+1. Aplica la regla según el valor de $a$:    
+    - **Si** $a < 1$**:** La complejidad dominada por el trabajo local es $O(n^k)$.
+    - **Si** $a = 1$**:** La complejidad polinómica es $O(n^{k+1})$.
+    - **Si** $a > 1$**:** La complejidad es exponencial. En su forma de cota superior, se expresa como $O(n^k \cdot a^{n/b})$. _(Nota: La cota ajustada exacta es_ $\Theta(a^{n/b})$_)._
+
+
+#### > Expansion / Sustitucion
 El mejor caso de uso es cuando la recurrencia es de este estilo: $$T(n) = aT(n - b) + O(n^k)$$Lo que hacemos es expandir la recurrencia hasta poder generalizarla a una formula para luego sustituir en la original.
 - **Ejemplo Costo Lineal ($T(n) = T(n-1) + c$)**
 - Paso 1: Escribir la ecuación y su primera expansión.  

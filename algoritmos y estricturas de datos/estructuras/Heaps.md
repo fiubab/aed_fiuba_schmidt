@@ -1,0 +1,4 @@
+fecha: {date}
+tags: #algoritmos
+
+---
