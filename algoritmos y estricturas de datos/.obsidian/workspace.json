@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f7f6324bf02586de",
+        "id": "46bed0ec79c411c4",
         "type": "tabs",
         "children": [
           {
-            "id": "4fb06851d61158af",
+            "id": "00e2310acb60ee76",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,79 +20,8 @@
               "icon": "lucide-file",
               "title": "Arboles"
             }
-          },
-          {
-            "id": "bc64c1954a9c5fa4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "estructuras/Grafos.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Grafos"
-            }
-          },
-          {
-            "id": "797ad72fe3ea5e68",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "complejidad/Big O.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Big O"
-            }
-          },
-          {
-            "id": "9341b85dcecfcaac",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "complejidad/Teorema Maestro.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Teorema Maestro"
-            }
-          },
-          {
-            "id": "7c94bc3d77446d59",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "estructuras/Grafos.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Grafos"
-            }
-          },
-          {
-            "id": "7349b8564d3f0ea4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "estructuras/Grafos.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Grafos"
-            }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -254,29 +183,31 @@
       "bases:Create new base": false
     }
   },
-  "active": "7349b8564d3f0ea4",
+  "active": "00e2310acb60ee76",
   "lastOpenFiles": [
-    "estructuras/Heaps.md",
     "estructuras/Grafos.md",
+    "img/Pasted image 20260722164745.png",
+    "estructuras/Arboles.md",
+    "img/grafo.png",
+    "img/Pasted image 20260608173150.png",
+    "img/Pasted image 20260722164116.png",
+    "diapos/Parte 06 - Complejidad.pdf",
+    "estructuras/Heaps.md",
     "finales/2026-02-18-CB 100.pdf",
     "finales/Unconfirmed 386945.crdownload",
     "finales",
     "complejidad/Recursivos.md",
     "complejidad/Big O notation.md",
     "complejidad/Teorema Maestro.md",
-    "diapos/Parte 06 - Complejidad.pdf",
     "diapos/Unconfirmed 997616.crdownload",
     "diapos",
     "complejidad/test.py",
     "template/{title}.md",
     "complejidad",
-    "estructuras/Arboles.md",
     "estructuras",
-    "img/Pasted image 20260608173150.png",
     "algoritmos",
     "algoritmos/MCD.md",
     "algoritmos/Fibonacci.md",
-    "img/grafo.png",
     "Welcome.md"
   ]
 }
