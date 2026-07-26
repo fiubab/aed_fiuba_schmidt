@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "46bed0ec79c411c4",
+        "id": "2fc263c5ec222a11",
         "type": "tabs",
         "children": [
           {
-            "id": "00e2310acb60ee76",
+            "id": "4d6f18b8552bb316",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -184,11 +184,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "00e2310acb60ee76",
+  "active": "4d6f18b8552bb316",
   "lastOpenFiles": [
+    "img/Pasted image 20260726181717.png",
+    "estructuras/Arboles.md",
+    "img/Pasted image 20260726181717.tmp.png",
+    "Pasted image 20260726181717.png",
+    "img/Pasted image 20260725192541.png",
+    "img/Pasted image 20260725192541.tmp.png",
     "estructuras/Grafos.md",
     "img/Pasted image 20260722164745.png",
-    "estructuras/Arboles.md",
     "img/grafo.png",
     "img/Pasted image 20260608173150.png",
     "img/Pasted image 20260722164116.png",
