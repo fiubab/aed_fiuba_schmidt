@@ -22,37 +22,30 @@ Es un BST pero se diferencia de este con que siempre esta balanceado.
 Esto se consigue asignandole a cada **nodo $N$** una propiedad $altura$ y asi definimos un factor de equilibrio $$FE(N) = \text{altura}(\text{subárbol izquierdo}) - \text{altura}(\text{subárbol derecho})$$
 Un árbol mantiene la propiedad AVL si y solo si, para **cada nodo** $N$ del árbol:
 $$FE(N) \in \{-1, 0, 1\}$$
-Si en algun momento un nodo alcanza FE -2 o +2, el subarbol se declara desbalanceado y debemos reestructurarlo.
+Si en algun momento un nodo alcanza FE -2 o +2, el subarbol se declara desbalanceado y debemos balancearlo.
 Para esto estan las rotaciones:
-`Una rotación cambia la raíz local de un subárbol manteniendo intactas las relaciones del BST`
-- ##### **Rotación Simple a la Derecha (LL/RSD)**
-  Se aplica cuando el subárbol izquierdo está demasiado cargado ($FE = +2$) y el peso está en el hijo izquierdo ($FE_{hijo} \ge 0$).
-	```Plaintext
-		   Z (+2)                 Y
-	     /  \                  /   \
-	    Y    T4   ------>     X     Z
-	   / \                   / \   / \
-	   X   T3                T1 T2 T3 T4
-	  / \
-	 T1  T2
-	```
-	**Mecánica:** $Y$ sube a ocupar el lugar de $Z$. $Z$ pasa a ser el hijo derecho de $Y$, y el antiguo subárbol derecho de $Y$ ($T3$) se reasigna como el nuevo hijo izquierdo de $Z$.
+> *Una rotación cambia la raíz local de un subárbol manteniendo intactas las relaciones del BST*
+##### **Rotación Simple a la Derecha (LL/RSD)**
+Se aplica cuando el subárbol izquierdo está demasiado cargado ($FE = +2$) y el peso está en el hijo izquierdo ($FE_{hijo} \ge 0$).
+```Plaintext
+ 	    Z (+2)                Y
+ 	  /  \                  /   \
+ 	 Y    T4   ------>     X     Z
+    / \                   / \   / \
+   X   T3                T1 T2 T3 T4
+  / \
+ T1  T2
+```
+**Mecánica:** $Y$ sube a ocupar el lugar de $Z$. $Z$ pasa a ser el hijo derecho de $Y$, y el antiguo subárbol derecho de $Y$ ($T3$) se reasigna como el nuevo hijo izquierdo de $Z$.
+##### Rotación Simple a la Izquierda (RR/RSI)
+Es la operación simétrica a la anterior. Se aplica cuando el subárbol derecho está demasiado cargado ($FE = -2$) y el peso está en el hijo derecho ($FE_{hijo} \le 0$).
 
-- ##### Rotación Simple a la Izquierda (RR/RSI)
-	Es la operación simétrica a la anterior. Se aplica cuando el subárbol derecho está demasiado cargado ($FE = -2$) y el peso está en el hijo derecho ($FE_{hijo} \le 0$).
-
-- ##### Rotacion Doble a la Derecha (RDD)
-  $FE(N) = -2$ y su nodo izq $FE(N_{izq}) = 1$
-- ##### Rotacion Doble a la Izq (RDI)
-  $FE(N) = -2$ y su nodo derecho $FE(N_{izq}) = -1$
-
-
-|**Caso de Desbalance**|**Condición**|**Solución Aplicada**|
-|---|---|---|
-|**Izquierda-Izquierda (LL)**|$FE(Nodo) = +2$ y $FE(HijoIzq) \ge 0$|1 Rotación Simple a la Derecha|
-|**Derecha-Derecha (RR)**|$FE(Nodo) = -2$ y $FE(HijoDer) \le 0$|1 Rotación Simple a la Izquierda|
-|**Izquierda-Derecha (LR)**|$FE(Nodo) = +2$ y $FE(HijoIzq) < 0$|Rotación Izquierda en el Hijo, luego Derecha en el Nodo|
-|**Derecha-Izquierda (RL)**|$FE(Nodo) = -2$ y $FE(HijoDer) > 0$|Rotación Derecha en el Hijo, luego Izquierda en el Nodo|
+| **Caso de Desbalance**     | **Condición**                         | **Solución Aplicada**                                   |
+| -------------------------- | ------------------------------------- | ------------------------------------------------------- |
+| Izquierda-Izquierda (LL)   | $FE(Nodo) = +2$ y $FE(HijoIzq) \ge 0$ | 1 Rotación Simple a la Derecha                          |
+| Derecha-Derecha (RR)   | $FE(Nodo) = -2$ y $FE(HijoDer) \le 0$ | 1 Rotación Simple a la Izquierda                        |
+| Izquierda-Derecha (LR) | $FE(Nodo) = +2$ y $FE(HijoIzq) < 0$   | Rotación Izquierda en el Hijo, luego Derecha en el Nodo |
+| Derecha-Izquierda (RL) | $FE(Nodo) = -2$ y $FE(HijoDer) > 0$   | Rotación Derecha en el Hijo, luego Izquierda en el Nodo |
 
 ---
 
@@ -112,4 +105,4 @@ Si la clave a eliminar está en un nodo interno, se intercambia por su antecesor
 2. **Rebalanceo por Carencia (_Underflow_):**
     - Si el nodo se queda con menos de $\lceil m/2 \rceil - 1$ claves, debe restablecer sus invariantes.
     - **Redistribución (Robo):** Si un hermano adyacente (izquierdo o derecho) tiene más del mínimo de claves, se rota una clave del hermano hacia el padre y la clave separadora del padre desciende al nodo deficitario.
-    - **Fusión (_Merge_):** Si ningún hermano adyacente tiene claves para prestar, se fusiona el nodo deficitario, un hermano adyacente y la clave separadora del nodo padre en un solo nodo. Esto reduce en 1 las claves del padre, lo que puede propagar la fusión hacia arriba. 
+    - **Fusión (_Merge_):** Si ningún hermano adyacente tiene claves para prestar, se fusiona el nodo deficitario, un hermano adyacente y la clave separadora del nodo padre en un solo nodo. Esto reduce en 1 las claves del padre, lo que puede propagar la fusión hacia arriba 

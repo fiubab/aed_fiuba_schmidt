@@ -1,4 +1,4 @@
-how to fecha: {date}
+- [x] geminihow to fecha: {date}
 tags: #algoritmos #recursion #complejidad #complejidad 
 
 ---
@@ -70,9 +70,7 @@ def merge_sort(lista):
 - Eq final: T(n) = O(n) + 2T(n/2)
 
 Ahora bien, todo muy lindo. Pero como se que complejidad tiene realmente el algoritmo usando la notacion big O?
-
-# De eq a big O
-#### > Teorema maestro
+## > Teorema maestro
 El metodo mas rapido y directo en los problemas "divide and conquer" con ecuaciones de este estilo: $$T(n) = aT(n/b) + O(n^d)$$
 1. Identifica las variables:
     - $a$: Número de subproblemas (llamadas recursivas).
@@ -92,7 +90,7 @@ $$T(n) = aT(n-b) + O(n^k)$$
     - **Si** $a > 1$**:** La complejidad es exponencial. En su forma de cota superior, se expresa como $O(n^k \cdot a^{n/b})$. _(Nota: La cota ajustada exacta es_ $\Theta(a^{n/b})$_)._
 
 
-#### > Expansion / Sustitucion
+## > Expansion / Sustitucion
 El mejor caso de uso es cuando la recurrencia es de este estilo: $$T(n) = aT(n - b) + O(n^k)$$Lo que hacemos es expandir la recurrencia hasta poder generalizarla a una formula para luego sustituir en la original.
 - **Ejemplo Costo Lineal ($T(n) = T(n-1) + c$)**
 - Paso 1: Escribir la ecuación y su primera expansión.  

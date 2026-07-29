@@ -2,34 +2,50 @@ fecha: {date}
 tags: #algoritmos #grafos #recursion #estructuras 
 
 ---
-## Que es un grafo?
-Un grafo es un conjunto de nodos conectados por aristas
-![[grafo.png|221]]
-El primer problema en la historia que resolvieron los grafos, es el problema de los puentes de Königsberg. El gran Euler fue quien logro resolverlo
+
+El primer problema en la historia que resolvieron con grafos, fue el problema de los puentes de Königsberg. El gran Euler fue quien logro resolverlo
 ![[Pasted image 20260608173150.png|221]]
 El problema consistia en encontrar un camino que recorra todos los puentes sin pasar mas de una sola vez por el mismo puente
 Mas tarde volveremos sobre este problema.
-# Definiciones Aburridas
 
-Un **GRAFO** es una pareja de conjuntos $G = (V, A)$ donde $V$ es el conjunto de vértices, y $A$ es el conjunto de aristas, este último es un conjunto de pares $(u,b)$ tal que $u, b \in V$ . Para simplificar, notaremos la arista como $ab$ 
+---
+
+**GRAFO:** Pareja de conjuntos $G = (V, A)$ donde $V$ es el conjunto de vértices, y $A$ es el conjunto de aristas, $A$ es un conjunto de pares $(u,b)$ tal que $u, b \in V$.
 En teoría de grafos, sólo queda lo esencial del dibujo: la forma de las aristas no son relevantes, sólo importa a qué vértices están unidas. 
-
 Un **SUBGRAFO** es un grafo $G'$, cuyos conjuntos $(V',A')$ son subconjuntos de $(V, A) = G$ 
 
-Un **GRAFO DIRIGIDO / ORIENTADO** es un grafo cuyas aristas tienen una orientacion $(a,b) \neq (b,a)$. Diferenciandose de un grafo no orientado que posee aristas bidireccionales $(a,b) = (b,a)$ siendo que con la existencia de $(a,b)$ no es necesario que exista $(b,a)$.
+**GRAFO DIRIGIDO / ORIENTADO:** Las aristas tienen una orientacion => $(a,b) \neq (b,a)$. Diferenciandose de un grafo no orientado que posee aristas bidireccionales $(a,b) = (b,a)$ siendo que con la existencia de $(a,b)$ no es necesaria $(b,a)$.
+
+Un **GRAFO PONDERADO / CON PESO:** Cada arista tiene asociado un valor numérico o peso $w(u, v)$ que representa costos, distancias, capacidades o tiempos.
 
 El **GRADO** de un nodo o vertice es la cantidad de aristas que llegan o salen de el
 
 Un **Ciclo** es cuando se recorre el grafo, pasando una unica vez por cada arista. Y al finalizar el ciclo se vuelve al mismo nodo de origen. (No es necesario que se recorra todo el grafo)
 El ciclo es **Hamiltoniano** si se pasa por TODOS los vertices SOLO 1 VEZ antes de volver al origen.
 
-### Caracterizacion de grafos
-	1) Simple --> 2 vertices especificos son unidos por una unica arista cualquiera
-	2) No simple --> multigrafo
-	3) Conexo --> si cada par (a,b) de vertices esta conectado por un camino
-	4) Doblemente conexo --> si cada par (a,b) tiene almenos 2 caminos que los conectan. Osea que al eliminar cualquier vertice/nodo el grafo seguira siendo conexo
-	Es posible determinar si un grafo es conexo usando un algoritmo Búsqueda en anchura (BFS) o Búsqueda en profundidad (DFS).
-	5) Completos --> si todos los pares posibles estan unidos por al menos una arista
+## Conceptos Clave de Topología
+- **Adyacencia:** Se dice que un nodo $v$ es adyacente a $u$ si existe una arista $(u, v) \in A$.
+- **Camino:** Secuencia de vértices $v_1, v_2, \dots, v_n$ tal que $(v_i, v_{i+1}) \in A$ para todo $1 \le i < n$.
+- **Recorrido:** Es un camino que **NO repite aristas** (aunque sí puede volver a pasar por el mismo vértice).
+- **Longitud de un camino:** Cantidad total de aristas que conforman el camino (o la suma de sus pesos en grafos ponderados).
+- **Ciclo:** Camino donde el nodo inicial y el final coinciden ($v_1 = v_n$), y los vértices intermedios son distintos.
+- **Conexidad:**
+  - **Grafo no dirigido conexo:** Existe al menos un camino entre cualquier par de vértices.
+  - **Grafo dirigido fuertemente conexo:** Existe un camino dirigido en ambas direcciones entre cualquier par de vértices.
+  - **Grafo dirigido débilmente conexo:** El grafo subyacente (reemplazando arcos por aristas no dirigidas) es conexo.
+- **Arbol libre:** Grafo no dirigido, conexo y acíclico. Para $n$ vértices, contiene exactamente $n - 1$ aristas.
+- **Arbol generador:** subgrafo que conecta todos los vértices de un grafo original sin formar ciclos.
+
+---
+
+## Caracterización de Grafos
+1. **Simple:** Dos vértices específicos están unidos por una única arista.
+2. **No simple (Multigrafo):** Existen múltiples aristas entre los mismos vértices o bucles/lazos.
+3. **Conexo:** Cada par de vértices $(a, b)$ está conectado por al menos un camino.
+4. **Doblemente conexo (Biconexo):** Cada par de vértices $(a, b)$ tiene al menos dos caminos independientes que los conectan. Esto implica que al eliminar cualquier vértice/nodo, el grafo seguirá siendo conexo.
+5. **Completo:** Todos los pares posibles de vértices están unidos por una arista.
+> [!tip] Algoritmos de verificación
+Es posible determinar si un grafo es conexo utilizando algoritmos de **Búsqueda en Anchura (BFS)** o **Búsqueda en Profundidad (DFS)**.
 ###### Especiales
 - Bipartitos:
 		Cumplen que

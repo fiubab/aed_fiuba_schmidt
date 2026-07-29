@@ -8,17 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "4d6f18b8552bb316",
+            "id": "9d61c4540aff971e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "estructuras/Arboles.md",
+                "file": "complejidad/Recursivos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Arboles"
+              "title": "Recursivos"
+            }
+          },
+          {
+            "id": "b7598ac3b0abb499",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "estructuras/Colas de Prioridad.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Colas de Prioridad"
             }
           }
         ]
@@ -78,8 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "aec56b58208abe3d",
@@ -184,34 +197,39 @@
       "bases:Create new base": false
     }
   },
-  "active": "4d6f18b8552bb316",
+  "active": "9d61c4540aff971e",
   "lastOpenFiles": [
-    "img/Pasted image 20260726181717.png",
+    "complejidad/Big O notation.md",
+    "finales/FINAL 2024-12-09.md",
+    "estructuras/Colas de Prioridad.md",
+    "estructuras/Grafos.md",
     "estructuras/Arboles.md",
+    "complejidad/Recursivos.md",
+    "template/FINAL.md",
+    "finales/Finales/2026-02-18-CB 100.pdf",
+    "finales/Finales/2026-02-11-CB 100.pdf",
+    "finales/Finales/2026-02-04-CB 100.pdf",
+    "finales/Finales/2025-07-16-CB 100.pdf",
+    "finales/Finales/2025-07-08-CB 100.pdf",
+    "finales/Finales/2025-07-02-CB 100.pdf",
+    "finales/Finales/2025-02-10-CB 100.pdf",
+    "finales/Finales/2025-02-03-CB 100.pdf",
+    "finales/Finales/2024-12-16-CB 100.pdf",
+    "finales/Finales/2024-12-09-CB 100.pdf",
+    "estructuras/Grafos Avanzados.md",
+    "estructuras/Heaps.md",
+    "algoritmos/Tecnicas.md",
+    "img/Pasted image 20260726181717.png",
     "img/Pasted image 20260726181717.tmp.png",
     "Pasted image 20260726181717.png",
     "img/Pasted image 20260725192541.png",
     "img/Pasted image 20260725192541.tmp.png",
-    "estructuras/Grafos.md",
     "img/Pasted image 20260722164745.png",
     "img/grafo.png",
     "img/Pasted image 20260608173150.png",
     "img/Pasted image 20260722164116.png",
-    "diapos/Parte 06 - Complejidad.pdf",
-    "estructuras/Heaps.md",
-    "finales/2026-02-18-CB 100.pdf",
-    "finales/Unconfirmed 386945.crdownload",
-    "finales",
-    "complejidad/Recursivos.md",
-    "complejidad/Big O notation.md",
     "complejidad/Teorema Maestro.md",
-    "diapos/Unconfirmed 997616.crdownload",
-    "diapos",
-    "complejidad/test.py",
     "template/{title}.md",
-    "complejidad",
-    "estructuras",
-    "algoritmos",
     "algoritmos/MCD.md",
     "algoritmos/Fibonacci.md",
     "Welcome.md"
